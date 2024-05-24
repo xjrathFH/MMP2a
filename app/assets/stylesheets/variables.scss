@@ -1,0 +1,35 @@
+// MAX-WIDTH CONTAINER SIZE
+
+$max-width: 1920;
+
+// BREAKPOINTS
+
+$mobile: 599;
+
+$desktop: $mobile + 1;
+
+
+//Colors
+$cHoverYellow: #FFF5AE;
+$cDisabledYellow: #FFFAD6;
+$cPrimaryYellow: #F8E559;
+$cPrimaryDark: #332941;
+$cSecondaryDark: #3B3486;
+$cPrimaryViolett: #864Af9;
+
+/* Text-size styles */
+/* base size: p3-size (16px) */
+$h1-size: 4rem;
+$h2-size: 3rem;
+$h3-size: 2rem;
+$h4-size: 1.5rem;
+$h5-size: 1rem;
+$p-size: 1.5rem;
+$a-size: 1.5rem;
+$p2-size: 1.12rem;
+$a2-size: 1.12rem;
+$p3-size: 1rem;
+$a3-size: 1rem;
+$p4-size: 0.88rem;
+$a4-size: 0.88rem;
+$sub-size: 1rem;

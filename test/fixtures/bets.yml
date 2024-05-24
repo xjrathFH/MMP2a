@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  title: MyString
+  description: MyString
+  minimum_fee: 1.5
+  public: false
+  outcome: false
+  created_at: 2024-01-29 11:23:43
+
+two:
+  owner_id: 1
+  title: MyString
+  description: MyString
+  minimum_fee: 1.5
+  public: false
+  outcome: false
+  created_at: 2024-01-29 11:23:43

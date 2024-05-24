@@ -1,0 +1,39 @@
+<main>
+  <div id="my-bets" class="card main-card-container">
+    <h3>My Bets</h3>
+    <div id="my-bets-card-wrapper" class="card-wrapper">
+      <% if @bets.any? %>
+        <% @bets.each do |bet| %>
+          <div class="card">
+            <h4 class="title"><%= bet.title %></h4>
+            <p>
+              Created by:&nbsp;&nbsp;&nbsp;&nbsp;
+              <strong><%= User.find_by(id: bet.owner_id)&.username %></strong>
+            </p>
+            <p class="minimum-bet">
+              Minimum bet:&nbsp;&nbsp;&nbsp;&nbsp;
+              <strong><%= bet.minimum_fee %><span class="currency"
+                  >ECT$</span
+                ></strong
+              >
+            </p>
+            <%= link_to 'Show!', bet, class: 'card button' %>
+          </div>
+        <% end %>
+      <% else %>
+        <% if @user == current_user %>
+          <div id="my-bets-card-wrapper" class="card-wrapper empty">
+            <p>You currently have no running bets</p>
+            <%= link_to 'Make a new bet', new_bet_path, class: 'card' %>
+          </div>
+        <% else %>
+          <div id="my-bets-card-wrapper" class="card-wrapper empty">
+            <p>
+              <strong><%= @user.username %></strong> has no running bets
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</main>

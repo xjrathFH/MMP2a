@@ -1,0 +1,26 @@
+footer.card {
+    border-radius: 1rem;
+}
+
+footer {
+    height: 128px;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-socials {
+    display: flex;
+    gap: 2rem;
+    height: 51px;
+    overflow: visible;
+    align-items: center;
+}
+
+#cpr {
+    a {
+        font-family: "SpaceGrotesk";
+    }
+}

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Participations</h1>
+
+<div id="participations" class="card">
+  <% @participations.each do |participation| %>
+    <%= render participation %>
+    <p>
+      <%= link_to "Show this participation", participation %>
+    </p>
+  <% end %>
+</div>
+
+<div id="bets" class="card">
+  <% @bets.each do |bet| %>
+    <%= link_to "New Participation #{bet.id}", new_participation_path(bet_id: bet.id) %>
+  <% end %>
+</div>

@@ -1,0 +1,52 @@
+/* The Modal (background) */
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+#closeModal {
+    cursor: pointer;
+    font-size: $h3-size;
+}
+
+
+.error-message {
+    color: red;
+}
+
+
+.error-card {
+    padding: 1rem;
+    border-radius: 3px;
+    border: 2px solid rgb(255, 0, 0);
+    background: $cPrimaryYellow;
+    box-shadow: 8px 8px 0px 0px #000;
+}

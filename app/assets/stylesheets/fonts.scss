@@ -1,0 +1,60 @@
+// app/assets/stylesheets/fonts.scss
+
+// Press Start 2P
+@font-face {
+    font-family: 'PressStart2P';
+    src: font-url('PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Space Grotesk
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: font-url('SpaceGrotesk-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: font-url('SpaceGrotesk-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: font-url('SpaceGrotesk-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: font-url("SpaceGrotesk-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: font-url('SpaceGrotesk-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'PressStart2P';
+}
+
+p {
+    font-family: 'SpaceGrotesk';
+}

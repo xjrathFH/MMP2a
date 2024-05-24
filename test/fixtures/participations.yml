@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bet_id: 1
+  owner_id: 1
+  fee: 1
+  message: MyString
+  anonymous: false
+
+two:
+  bet_id: 1
+  owner_id: 1
+  fee: 1
+  message: MyString
+  anonymous: false

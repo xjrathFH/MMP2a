@@ -1,0 +1,187 @@
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: $cSecondaryDark;
+
+    @include breakpoint(0, $mobile) {
+        flex-direction: column;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    position: relative;
+}
+
+span {
+    display: inline;
+}
+
+.button {
+    font-family: "PressStart2P";
+    padding: 1rem;
+    border-radius: 3px;
+    border: 2px solid black;
+    background: $cPrimaryYellow;
+    box-shadow: 4px 4px 0px 0px black;
+    width: 100%;
+}
+
+.button-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background: $cPrimaryYellow;
+    box-shadow: 4px 4px 0px 0px black;
+    border-radius: 27px;
+    padding: 10px;
+    transition: ease-in-out 0.3s;
+
+    svg {
+        transition: ease-in-out 0.3s;
+        height: 100%;
+        fill: black;
+    }
+}
+
+a.button {
+    text-align: center;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 3px;
+    border: 2px solid black;
+    background: $cPrimaryYellow;
+    box-shadow: 8px 8px 0px 0px #000;
+    color: black;
+    transition: ease-in-out 0.3s;
+}
+
+main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    >.main-card-container {
+        flex: auto;
+        width: 100%;
+        max-width: 1000px;
+        align-self: center;
+        border-radius: 16px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card-wrapper .card>a {
+        font-family: 'PressStart2P';
+    }
+
+    .card-wrapper>.card {
+        max-width: 400px;
+        flex: auto;
+    }
+
+    .card-wrapper .button {
+        width: 100%;
+        align-items: center;
+    }
+
+    .card-wrapper .minimum-bet {
+        font-size: 1rem;
+
+        .currency {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+button.button:hover,
+a.card:hover,
+.button-container:hover {
+    background-color: $cPrimaryViolett;
+    color: $cPrimaryYellow;
+    fill: $cPrimaryYellow;
+
+    * {
+        color: $cPrimaryYellow;
+        fill: $cPrimaryYellow;
+    }
+}
+
+.card .card {
+    box-shadow: 4px 4px 0px 0px #000;
+}
+
+.no-shadow {
+    box-shadow: 0px 0px 0px 0px !important;
+}
+
+#main-wrapper {
+    min-height: 100%;
+    max-width: 2000px;
+    align-self: center;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: 'PressStart2P';
+}
+
+h1 {
+    font-size: $h1-size;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+h4 {
+    font-size: $h4-size;
+}
+
+h5 {
+    font-size: $h5-size;
+}
+
+p {
+    font-family: 'SpaceGrotesk';
+
+}
+
+strong {
+    font-weight: bold;
+}

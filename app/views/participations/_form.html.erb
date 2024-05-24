@@ -1,0 +1,65 @@
+<%= form_with(model: participation) do |form| %>
+  <% if participation.errors.any? %>
+    <div style="color: red">
+      <h2>
+        <%= pluralize(participation.errors.count, 'error') %> prohibited this
+        participation from being saved:
+      </h2>
+      <ul>
+        <% participation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :bet_id, value: @bet.id %>
+
+  <div class="card detail-container">
+    <%= form.label :anonymous, 'Enter your prediction!' %>
+    <div class="radio-toolbar">
+      <div class="radio-button-wrapper">
+        <%= form.radio_button :outcome, '1', id: 'yes', checked: true %>
+        <%=
+          form.label :outcome,
+                     'Yes!',
+                     value: '1',
+                     for: 'yes',
+                     class: 'card',
+                     checked: true
+        %>
+      </div>
+      <div class="radio-button-wrapper">
+        <%= form.radio_button :outcome, '0', id: 'nope' %>
+        <%=
+          form.label :outcome, 'Nope!', value: '0', for: 'nope', class: 'card'
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="card detail-container">
+    <%= form.label :message %>
+    <%=
+      form.text_field :message,
+                      class: 'card no-shadow',
+                      placeholder: 'add a comment'
+    %>
+  </div>
+
+  <div class="card detail-container">
+    <%= form.label :fee, 'Enter your bet amount:' %>
+    <div class="ects-input card" style="margin-top: 1rem">
+      <p>ECT$</p>
+      <%=
+        form.number_field :fee,
+                          min: @bet.minimum_fee,
+                          placeholder: '1',
+                          max: '180',
+                          step: '0.5',
+                          value: @bet.minimum_fee
+      %>
+    </div>
+  </div>
+
+  <%= form.submit 'BET !!!!', class: 'card' %>
+<% end %>

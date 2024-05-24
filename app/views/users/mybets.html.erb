@@ -1,0 +1,16 @@
+<main>
+  <div id="my-bets" class="card">
+    <h3>My bets</h3>
+    <div id="my-bets-card-wrapper" class="card-wrapper">
+      <% if @current_user_bets %>
+        <% @current_user_bets.each do |bet| %>
+          <div class="card">
+            <p class="title"><%= bet.title %></p>
+            <p class="minimum-bet">Minimum Bet: <%= bet.minimum_fee %> ECT$</p>
+          </div>
+        <% end %>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+</main>

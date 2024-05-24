@@ -1,0 +1,100 @@
+<% if !current_user %>
+  <main>
+    <div
+      id="no-login"
+      class="card main-card-container"
+      style="width: 100%; max-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-around;"
+    >
+      <h3>☆☆☆ Please login to enter the site! ☆☆☆</h3>
+    </div>
+  </main>
+<% else %>
+  <main>
+    <div id="my-bets" class="card main-card-container">
+      <h3>My participations</h3>
+      <div id="my-bets-card-wrapper" class="card-wrapper">
+        <% if !current_user&.participations&.empty? %>
+          <% current_user.participations.reverse.each do |participation| %>
+            <%
+              @bet_owner =
+                User.find_by(id: Bet.find_by(id: participation.bet_id).owner_id)
+              @title = Bet.find_by(id: participation.bet_id).title
+              @fee = participation.fee
+              @outcome = participation.outcome
+            %>
+            <div class="card">
+              <h4 class="title">
+                <%= @title %>
+              </h4>
+              <p>
+                Created by:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <strong><%= @bet_owner.username %></strong>
+              </p>
+              <p class="minimum-bet">
+                Your bet amount:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <strong><%= participation.fee %><span class="currency">
+                    ECT$</span
+                  ></strong
+                >
+              </p>
+              <p class="minimum-bet">
+                Your chose outcome:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <strong><%= @outcome %> </strong>
+              </p>
+              <%= link_to 'Show !', participation, class: 'card button' %>
+            </div>
+          <% end %>
+        <% else %>
+          <div id="my-bets-card-wrapper" class="card-wrapper empty">
+            <p>You currently have no running bets</p>
+            <%= link_to 'Explore all bets', bets_path, class: 'card' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="trending-bets" class="card main-card-container">
+      <h3>My bets</h3>
+      <% puts current_user&.bets %>
+      <% if !current_user&.bets&.empty? %>
+        <div id="my-bets-card-wrapper" class="card-wrapper">
+          <% current_user.bets.reverse.each do |bet| %>
+            <div class="card">
+              <h4 class="title"><%= bet.title %></h4>
+              <p>
+                Created by:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <strong><%= User.find_by(id: bet.owner_id).username %></strong>
+              </p>
+              <p class="minimum-bet">
+                Minimum bet:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <strong><%= bet.minimum_fee %><span class="currency">
+                    ECT$</span
+                  ></strong
+                >
+              </p>
+              <%= link_to 'Show !', bet, class: 'card button' %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div id="my-bets-card-wrapper" class="card-wrapper empty">
+          <p>You have no bets of your own</p>
+          <%= link_to 'Create a new bet', new_bet_path, class: 'card' %>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  <div id="side" class="card">
+    <div class="ranking-container  card">
+      <h5>KING OF THE HILL</h5>
+      <% @users = User.order(balance: :desc).limit(3) %>
+      <% @users.each_with_index do |user, index| %>
+        <div class="card">
+          <p class="placement">
+            <%= user.balance %><span class="currency"> ECT$</span>
+          </p>
+          <p class="name"><%= "#{user.username}" %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

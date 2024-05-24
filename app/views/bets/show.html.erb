@@ -1,0 +1,18 @@
+<main id="show-bet">
+  <%= render @bet %>
+
+  <% if @bet.resolved == false && @bet.owner_id == current_user.id%>
+    <div class="card main-card-container">
+      <h3>Resolve this bet !</h3>
+      <%= form_with(model: @bet, url: resolve_bet_path(@bet), method: :post, local: true) do |form| %>
+        <%= form.hidden_field :outcome, value: '1' %>
+        <%= form.submit 'Bet was true !!', class: 'card' %>
+      <% end %>
+
+      <%= form_with(model: @bet, url: resolve_bet_path(@bet), method: :post, local: true) do |form| %>
+        <%= form.hidden_field :outcome, value: '0' %>
+        <%= form.submit 'Bet was false !!', class: 'card' %>
+      <% end %>
+    </div>
+  <% end %>
+</main>

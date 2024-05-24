@@ -1,0 +1,28 @@
+<!-- app/views/shared/update_username_form.html.erb -->
+<!-- app/views/shared/update_username_form.html.erb -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content card">
+    <span> </span>
+    <h2>New here?</h2>
+    <%= form_for current_user, url: user_path(current_user), method: :patch, class: "detail-container" do |form| %>
+      <div class="detail-container">
+        <% if flash[:alert] %>
+          <p class="error-message">
+            <%= flash[:alert] %>
+          </p>
+        <% else %>
+          <%= form.label :username, 'Enter your Username:' %>
+        <% end %>
+        <%=
+          form.text_field :username,
+                          class: "username-input #{'error' if flash[:alert]}",
+                          placeholder: 'enter your username',
+                          required: true,
+                          class: "input #{'input-error' if flash[:alert]}"
+        %>
+      </div>
+      <%= form.submit 'Update Username', class: 'input' %>
+    <% end %>
+  </div>
+</div>

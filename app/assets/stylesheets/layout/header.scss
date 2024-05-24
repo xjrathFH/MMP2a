@@ -1,0 +1,56 @@
+header.card {
+    border-radius: 1rem;
+}
+
+header {
+    display: flex;
+    height: 100px;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+
+    .logo {
+        height: 100%;
+
+        img {
+            height: inherit;
+        }
+    }
+
+    nav>ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    
+}
+
+#header-button-group {
+    display: flex;
+    gap: 2rem;
+    height: 51px;
+    overflow: visible;
+    align-items: center;
+
+    #header-profile {
+        display: flex;
+        justify-content: space-between;
+        width: 285px;
+
+        img {
+            height: 100%;
+        }
+
+        p {
+            flex: auto;
+            text-align: center;
+        }
+    }
+}
+
+
+.mobile-header {
+    display: none;
+}

@@ -1,0 +1,25 @@
+.notif-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    >.card{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.notif-mark{
+    font-family: "PressStart2P";
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-top: 40px;
+    line-height: 25px;
+    padding-left: 5px;
+}

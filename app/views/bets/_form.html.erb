@@ -1,0 +1,59 @@
+<%= form_with(model: bet) do |form| %>
+  <% if bet.errors.any? %>
+    <div style="color: red">
+      <% bet.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form.label :title, style: 'display: block' %>
+  <%=
+    form.text_field :title,
+                    placeholder: 'enter the bets title',
+                    required: true,
+                    class: "input #{'input-error' if flash[:alert]}"
+  %>
+
+  <%= form.label :description, style: 'display: block' %>
+  <%=
+    form.text_area :description,
+                   class: 'input',
+                   placeholder: 'enter the description'
+  %>
+
+  <%= form.label :public, 'Should the bet be public ?' %>
+  <div class="radio-toolbar">
+    <div class="radio-button-wrapper">
+      <%= form.radio_button :public, true, id: 'public', checked: true %>
+      <%= form.label :public, 'Yes !', for: 'public', class: 'card' %>
+    </div>
+    <div class="radio-button-wrapper">
+      <%= form.radio_button :public, false, id: 'private' %>
+      <%= form.label :public, 'Nope !', for: 'private', class: 'card' %>
+    </div>
+  </div>
+
+  <%= form.label :winning_condition, style: 'display: block' %>
+  <%=
+    form.text_field :winning_condition,
+                    placeholder: 'enter the winning condition',
+                    required: true,
+                    class: "input #{'input-error' if flash[:alert]}"
+  %>
+
+  <%= form.label :minimum_fee, 'Enter the buyin:' %>
+  <div class="ects-input card">
+    <p>ECT$</p>
+    <%=
+      form.number_field :minimum_fee,
+                        min: 0.5,
+                        placeholder: '1',
+                        max: '180',
+                        step: '0.5',
+                        value: '1'
+    %>
+  </div>
+
+  <%= form.submit 'CREATE BET', class: 'input' %>
+<% end %>

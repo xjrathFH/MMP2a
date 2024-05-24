@@ -1,0 +1,44 @@
+.detail-container {
+    input {
+        height: fit-content;
+        padding: 0.5rem;
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    font-family: PressStart2P;
+
+}
+
+.input {
+    padding: 1rem;
+    border-radius: 3px;
+    border: 2px solid black;
+    background: $cPrimaryYellow;
+    box-shadow: 8px 8px 0px 0px #000;
+    color: black;
+    transition: ease-in-out 0.3s;
+    font-family: PressStart2P;
+}
+
+.input-error {
+    padding: 1rem;
+    border-radius: 3px;
+    border: 2px solid rgb(255, 0, 0);
+    background: $cPrimaryYellow;
+    box-shadow: 8px 8px 0px 0px #000;
+    color: black;
+    transition: ease-in-out 0.3s;
+    font-family: PressStart2P;
+}
+
+.error-message{
+    color: red;
+    font-family: PressStart2P;
+}
+

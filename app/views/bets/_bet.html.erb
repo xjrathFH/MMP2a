@@ -1,0 +1,41 @@
+<div id="<%= dom_id bet %>" class="card main-card-container">
+  <div class="card">
+    <strong>Title:</strong>
+    <%= bet.title %>
+  </div>
+
+  <p>
+    <strong>Owner:</strong>
+    <%= User.find_by(id: bet.owner_id).username %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= bet.description %>
+  </p>
+
+  <p>
+    <strong>Minimum fee:</strong>
+    <%= bet.minimum_fee %>
+  </p>
+
+  <p>
+    <strong>Public:</strong>
+    <%= bet.public %>
+  </p>
+
+  <p>
+    <strong>Outcome:</strong>
+    <%= bet.outcome %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= bet.created_at %>
+  </p>
+
+  <p>
+    <strong>Resolved? :</strong>
+    <%= bet.resolved %>
+  </p>
+</div>
